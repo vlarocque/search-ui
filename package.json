@@ -1,6 +1,6 @@
 {
   "name": "coveo-search-ui",
-  "version": "1.0.500",
+  "version": "1.0.501",
   "description": "Coveo JavaScript Search Framework",
   "main": ".bin/js/CoveoJsSearch.js",
   "scripts": {
@@ -110,7 +110,6 @@
     "typescript": "1.8.x",
     "underscore": "^1.8.3"
   },
-
   "env": {
     "NPM_CONFIG_PRODUCTION": {
       "value": "false"
