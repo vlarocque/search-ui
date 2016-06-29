@@ -18,6 +18,11 @@
   <body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
     <div class="coveo-tab-section">
       <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+      <a class="CoveoTab" data-id="YouTube" data-caption="YouTube" data-expression='@filetype=="youtubevideo"'></a>
+      <a class="CoveoTab" data-id="Dropbox" data-caption="Dropbox" data-expression="@connectortype==DropboxCrawler"></a>
+      <a class="CoveoTab" data-id="Email" data-caption="Email" data-expression="@mailbox" data-sort="date descending"></a>
+      <a class="CoveoTab" data-id="Salesforce" data-caption="Salesforce" data-expression="@sfid"></a>
+      <a class="CoveoTab" data-id="SharePoint" data-caption="SharePoint"  data-expression="@connectortype==SharePoint OR @connectortype==SharepointCrawler"></a>
     </div>
     <div class='coveo-search-section'>
       <div class="CoveoSettings"></div>
