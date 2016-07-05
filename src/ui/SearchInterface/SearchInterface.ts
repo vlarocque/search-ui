@@ -69,6 +69,7 @@ export class SearchInterface extends RootComponent {
      */
     enableHistory: ComponentOptions.buildBooleanOption({ defaultValue: false }),
     /**
+    enableAutomaticResponsiveMode: ComponentOptions.buildBooleanOption({ defaultValue: true }),
      * Specifies that you wish to use the local storage of the browser to store the state of the interface.<br/>
      * This can be used for very specific purpose, and only if you know what you are doing.<br/>
      * Default value is false.
