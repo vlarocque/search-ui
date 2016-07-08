@@ -135,7 +135,7 @@ export class Recommendation extends SearchInterface {
       }
     }
   }
-  
+
   private modifyQueryForRecommendation(data: IBuildingQueryEventArgs) {
     if (this.mainInterfaceQuery) {
       Utils.copyObjectAttributes(data.queryBuilder, this.mainInterfaceQuery.queryBuilder, this.options.optionsToUse);
