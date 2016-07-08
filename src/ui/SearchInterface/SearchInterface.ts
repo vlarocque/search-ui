@@ -22,8 +22,7 @@ import {BaseComponent} from '../Base/BaseComponent';
 import {Debug} from '../Debug/Debug';
 import {HashUtils} from '../../utils/HashUtils';
 import _ = require('underscore');
-
-declare let FastClick;
+declare function require(name: string): any;
 declare let jstz;
 
 export interface ISearchInterfaceOptions {
@@ -202,7 +201,7 @@ export class SearchInterface extends RootComponent {
       $$(document.body).addClass('coveo-mobile-device');
     }
 
-    FastClick.attach(element);
+    require('fastclick').attach(element);
 
     this.options = ComponentOptions.initComponentOptions(element, SearchInterface, options);
     Assert.exists(element);
