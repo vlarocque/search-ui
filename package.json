@@ -5,8 +5,6 @@
   "main": ".bin/js/CoveoJsSearch.js",
   "scripts": {
     "prepublish": "npm run injectTag && npm run build && npm run minimize",
-    "install": "npm run prepublish",
-    "postinstall": "npm run prepublish",
     "test": "gulp buildTest && node_modules/karma/bin/karma start",
     "build": "gulp",
     "minimize": "node node_modules/webpack/bin/webpack.js --minimize",
