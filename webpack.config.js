@@ -19,9 +19,10 @@ module.exports = {
   entry: ['./src/Dependencies.js', './src/Index.ts'],
   output: {
     path: require('path').resolve('./bin/js'),
-    filename: minimize ? 'CoveoJsSearch.min.js' : 'CoveoJsSearch.js',
-    libraryTarget: 'var',
-    library: ['Coveo'],
+    filename: minimize ? '[name].min.js' : '[name].js',
+    libraryTarget: 'assign',
+    // See Index.ts as for why this need to be a temporary variable
+    library: ['var Coveo__temporary'],
     publicPath : '/js/'
   },
   resolve: {
