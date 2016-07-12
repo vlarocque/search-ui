@@ -21,6 +21,12 @@ export var jQueryInstance: JQuery;
 
 if (window['$'] != undefined && window['$'].fn != undefined) {
   jQueryInstance = window['$'];
+  if (window['Coveo'] == undefined) {
+    window['Coveo'] = {};
+  }
+  if (window['Coveo']['$'] == undefined) {
+    window['Coveo']['$'] = jQueryInstance;
+  }
   window['$'].fn.coveo = function (...args: any[]) {
     var returnValue: any;
     this.each((index: number, element: HTMLElement) => {
