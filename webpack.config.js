@@ -20,7 +20,7 @@ module.exports = {
   entry: ['./src/Dependencies.js', './src/Index.ts'],
   output: {
     path: require('path').resolve('./bin/js'),
-    filename: minimize ? '[name].min.js' : '[name].js',
+    filename: minimize ? 'CoveoJsSearch.min.js' : 'CoveoJsSearch.js',
     libraryTarget: 'umd',
     // See Index.ts as for why this need to be a temporary variable
     library: 'Coveo__temporary',

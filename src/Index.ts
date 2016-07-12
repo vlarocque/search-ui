@@ -197,7 +197,7 @@ let swapVar = () => {
   if (window['Coveo'] == undefined) {
     window['Coveo'] = this;
   } else {
-    _.each(_.keys(this), (k)=> {
+    _.each(_.keys(this), (k) => {
       window['Coveo'][k] = this[k];
     })
   }
