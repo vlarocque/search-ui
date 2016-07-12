@@ -10,6 +10,7 @@ if (minimize) {
 
 // Fail plugin will allow the webpack ts-loader to fail correctly when the TS compilation fails
 var plugins = [failPlugin];
+
 if (minimize) {
   plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
@@ -41,9 +42,7 @@ module.exports = {
   devtool: 'source-map',
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'ts-loader' },
-      { test: /\.scss$/, loaders: ['style?insertAt=bottom', 'css?sourceMap', 'resolve-url', 'sass?sourceMap'] },
-      { test: /\.(gif|svg|png|jpe?g|ttf|woff2?|eot)$/, loader: 'url?limit=8182' }
+      { test: /\.ts$/, loader: 'ts-loader' }
     ]
   },
   plugins: plugins,
