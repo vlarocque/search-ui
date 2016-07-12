@@ -187,3 +187,5 @@ export {ChatterPostAttachment} from './ui/ChatterPostAttachment/ChatterPostAttac
 export {ChatterPostedBy} from './ui/ChatterPostedBy/ChatterPostedBy';
 export {ChatterTopic} from './ui/ChatterTopic/ChatterTopic';
 export {ChatterUtils} from './utils/ChatterUtils';
+
+    _.each(_.keys(this), (k) => {
