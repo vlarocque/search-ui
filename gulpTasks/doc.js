@@ -4,6 +4,7 @@ const TypeDoc = require('typedoc');
 gulp.task('doc', function () {
   var app = new TypeDoc.Application({
     mode: 'file',
+    experimentalDecorators: true,
     target: 'ES5',
     module: 'CommonJS',
     includeDeclarations: true,
