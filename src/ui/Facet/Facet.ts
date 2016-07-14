@@ -1185,7 +1185,7 @@ export class Facet extends Component {
   private handleOmniboxWithSearchInFacet(eventArg: IPopulateOmniboxEventArgs) {
     var regex = new RegExp('^' + eventArg.completeQueryExpression.regex.source, 'i');
 
-    var promise = new Promise<IOmniboxDataRow>((resolve, reject)=> {
+    var promise = new Promise<IOmniboxDataRow>((resolve, reject) => {
       var searchParameters = new FacetSearchParameters(this);
       searchParameters.setValueToSearch(eventArg.completeQueryExpression.word);
       searchParameters.nbResults = this.options.numberOfValuesInOmnibox;
@@ -1201,10 +1201,10 @@ export class Facet extends Component {
           zIndex: this.omniboxZIndex
         });
       }).catch(() => {
-        resolve({element: undefined});
+        resolve({ element: undefined });
       })
     });
-    eventArg.rows.push({deferred: promise});
+    eventArg.rows.push({ deferred: promise });
   }
 
   private handleDuringQuery() {
