@@ -230,9 +230,7 @@ export class ResponsiveFacets implements IResponsiveComponent {
   }
 
   private disableFacetPreservePosition() {
-    _.each(this.facets, facet => {
-      facet.options.preservePosition = false;
-    });
+    _.each(this.facets, facet => facet.options.preservePosition = false);
   }
 
   private bindNukeEvents() {
@@ -242,9 +240,9 @@ export class ResponsiveFacets implements IResponsiveComponent {
   }
 
   private drawFacetSliderGraphs() {
-    _.each(this.facetSliders, facetSlider => {
-      facetSlider.drawDelayedGraphData();
-    })
+    _.each(this.facetSliders, facetSlider => facetSlider.drawDelayedGraphData());
+  }
+
   private isFacetSearchScrolledIntoView(facetSearchElement: HTMLElement) {
     let facetTop = facetSearchElement.getBoundingClientRect().top;
     let facetBottom = facetSearchElement.getBoundingClientRect().bottom;
