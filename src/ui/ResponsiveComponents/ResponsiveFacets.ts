@@ -18,7 +18,7 @@ export class ResponsiveFacets implements IResponsiveComponent {
   private static FACET_DROPDOWN_MIN_WIDTH: number = 280;
   private static FACET_DROPDOWN_WIDTH_RATIO: number = 0.35; // Used to set the width relative to the coveo root.
   private static TRANSPARENT_BACKGROUND_OPACITY: string = '0.9';
-  private static DEBOUNCE_SCROLL_WAIT = 150;
+  private static DEBOUNCE_SCROLL_WAIT = 250;
   private static ROOT_MIN_WIDTH: number = 800;
   private static logger: Logger;
 
@@ -104,7 +104,7 @@ export class ResponsiveFacets implements IResponsiveComponent {
     let filterByContainer = $$('div', { className: 'coveo-facet-header-filter-by-container', style: 'display: none' });
     let filterBy = $$('div', { className: 'coveo-facet-header-filter-by' });
     filterBy.text(l('Filter by:'));
-    filterByContainer.append(filterBy.el)
+    filterByContainer.append(filterBy.el);
     this.dropdownContent.prepend(filterByContainer.el);
   }
 
@@ -131,7 +131,7 @@ export class ResponsiveFacets implements IResponsiveComponent {
       _.each(this.facets, facet => {
         let facetSearch = facet.facetSearch;
         if (facetSearch && facetSearch.currentlyDisplayedResults && !this.isFacetSearchScrolledIntoView(facetSearch.search)) {
-          facetSearch.completelyDismissSearch();
+          facet.facetSearch.positionSearchResults(this.dropdownContent.el);
         } else if (facetSearch && facet.facetSearch.currentlyDisplayedResults) {
           facet.facetSearch.positionSearchResults();
         }
@@ -190,8 +190,8 @@ export class ResponsiveFacets implements IResponsiveComponent {
     }
     this.dropdownContent.el.style.width = width.toString() + 'px';
 
-    PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el, this.coveoRoot.el,
-      { horizontal: HorizontalAlignment.INNERRIGHT, vertical: VerticalAlignment.BOTTOM });
+    PopupUtils.positionPopup(this.dropdownContent.el, this.tabSection.el, this.coveoRoot.el,
+      { horizontal: HorizontalAlignment.INNERRIGHT, vertical: VerticalAlignment.BOTTOM }, this.coveoRoot.el);
   }
 
   private closeDropdown() {
@@ -251,7 +251,6 @@ export class ResponsiveFacets implements IResponsiveComponent {
 
     dropdownTop = dropdownTop >= 0 ? dropdownTop : 0;
 
-    let isVisible = (facetTop >= dropdownTop) && (facetBottom <= dropdownBottom);
-    return isVisible;
+    return (facetTop >= dropdownTop) && (facetBottom <= dropdownBottom);
   }
 }
