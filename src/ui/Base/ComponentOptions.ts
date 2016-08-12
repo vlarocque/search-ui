@@ -269,7 +269,7 @@ export class ComponentOptions {
         value = loadFromAttribute(element, name, optionDefinition);
       }
 
-      if (_.isEmpty(value) && values[name] != undefined) {
+      if (Utils.isNullOrUndefined(value) && values[name] != undefined) {
         value = values[name];
       }
 
