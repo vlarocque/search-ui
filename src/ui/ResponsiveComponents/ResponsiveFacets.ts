@@ -146,11 +146,7 @@ export class ResponsiveFacets implements IResponsiveComponent {
         this.popupBackground.detach();
       }
     });
-  }
-
-  private shouldCloseFacetDropdown(eventTarget: Dom) {
-    return !eventTarget.closest('coveo-facet-column') && !eventTarget.closest('coveo-facet-dropdown-header')
-      && this.searchInterface.isSmallInterface() && !eventTarget.closest('coveo-facet-settings-popup');
+    this.popupBackground.on('click', () => this.closeDropdown());
   }
 
   private saveFacetsPosition() {
