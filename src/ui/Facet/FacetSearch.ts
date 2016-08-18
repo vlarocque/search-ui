@@ -51,7 +51,9 @@ export class FacetSearch {
     this.searchResults = document.createElement('ul');
     $$(this.searchResults).addClass('coveo-facet-search-results');
     this.onResize = _.debounce(() => {
-      if (!this.isMobileDevice() && !this.facet.searchInterface.isSmallInterface()) {
+      // Mitigate issues in UT where the window in phantom js might get resized in the scope of another test.
+      // These would point to random instance of a test karma object, and not a real search interface.
+      if (!this.isMobileDevice() && !this.facet.searchInterface.isSmallInterface() && $$(this.facet.element).hasClass('coveo-facet-searching')) {
         this.positionSearchResults();
       }
     }, 250);
