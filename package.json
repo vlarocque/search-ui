@@ -106,6 +106,7 @@
     "ts-loader": "^0.8.2",
     "tsconfig-glob": "^0.4.3",
     "typedoc": "https://github.com/coveord/typedoc/tarball/master",
+    "typescript": "1.8.x",
     "url-loader": "^0.5.7",
     "walk": "^2.3.9",
     "webpack": "^1.13.0",
@@ -117,9 +118,7 @@
     "coveomagicbox": "1.0.9",
     "d3": "^3.5.17",
     "es6-promise": "^3.1.2",
-    "exports-loader": "^0.6.3",
-    "modal-box": "1.0.6",
-    "typescript": "1.8.x",
+    "modal-box": "1.0.7",
     "underscore": "^1.8.3"
   }
 }
