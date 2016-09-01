@@ -152,8 +152,13 @@ export function RecommendationTest() {
         it('should show the interface if there are recommendations', () => {
           Simulate.query(test.env);
           expect(test.cmp.element.style.display).not.toEqual('none');
-        })
-      })
-    })
-  })
+        });
+      });
+
+      it('should hide on query error', () => {
+        Simulate.query(test.env, {error: {message: 'oh noes', type: 'bad', name: 'foobar'}});
+        expect(test.cmp.element.style.display).toEqual('none');
+      });
+    });
+  });
 }
